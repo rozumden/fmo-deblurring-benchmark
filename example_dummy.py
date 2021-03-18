@@ -9,7 +9,7 @@ def parse_args():
 	parser.add_argument("--tbd_path", default='/cluster/home/denysr/scratch/dataset/TbD', required=False)
 	parser.add_argument("--tbd3d_path", default='/cluster/home/denysr/scratch/dataset/TbD-3D', required=False)
 	parser.add_argument("--falling_path", default='/cluster/home/denysr/scratch/dataset/falling_objects', required=False)
-	parser.add_argument("--verbose", default=True)
+	parser.add_argument("--verbose", default=False)
 	parser.add_argument("--visualization_path", default='/cluster/home/denysr/tmp', required=False)
 	parser.add_argument("--save_visualization", default=False, required=False)
 	return parser.parse_args()
