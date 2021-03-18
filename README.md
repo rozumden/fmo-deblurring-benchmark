@@ -17,16 +17,16 @@ def my_deblur(I,B,bbox,nsplits,radius):
 
 We provide several baseline and state-of-the-art methods.
 
-## Dummy baselines
+#### Dummy baselines
 
 Two baselines, one that always outputs the input image, and another that output the background image. Example is shown in `example_dummy.py`.
 
 
-## Deblatting
+#### Deblatting
 
 To evaluate this method, please check out the sub-module [ https://github.com/rozumden/deblatting_python ]. We provide three versions of deblatting: classical deblatting with single appearance (TbD), deblatting with chanring appearance (TbD-3D), and deblatting with trajectory oracle (TbD-O). Examples are shown in `example_deblatting.py`.
 
-## DeFMO - current state-of-the-art
+#### DeFMO - current state-of-the-art
 
 To evaluate this method, please check out the sub-module [ https://github.com/rozumden/DeFMO ]. Example is shown in `example_defmo.py`.
 
