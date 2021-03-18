@@ -35,7 +35,7 @@ If you use this repository, please cite the following publication ( https://arxi
   year = {2021}
 }
 ```
-If you use the baseline TbD method, please cite:
+The baseline TbD method:
 ```bibtex
 @inproceedings{Kotera-et-al-ICCVW-2019,
   author = {Jan Kotera and Denys Rozumnyi and Filip Sroubek and Jiri Matas},
@@ -47,7 +47,7 @@ If you use the baseline TbD method, please cite:
   year = {2019}
 }
 ```
-If you use the baseline TbD-3D or TbD-O method, please cite:
+The baseline TbD-3D or TbD-O method:
 ```bibtex
 @inproceedings{Rozumnyi-et-al-CVPR-2020,
   author = {Denys Rozumnyi and Jan Kotera and Filip Sroubek and Jiri Matas},
