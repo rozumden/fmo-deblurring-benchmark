@@ -21,3 +21,50 @@ We provide several baseline and state-of-the-art methods.
 
 Two baselines, one that always outputs the input image, and another that output the background image. Example is shown in `example_dummy.py`.
 
+Reference
+------------
+If you use this repository, please cite the following publication ( https://arxiv.org/abs/2012.00595 ):
+
+```bibtex
+@inproceedings{defmo,
+  author = {Denys Rozumnyi and Martin R. Oswald and Vittorio Ferrari and Jiri Matas and Marc Pollefeys},
+  title = {DeFMO: Deblurring and Shape Recovery of Fast Moving Objects},
+  booktitle = {CVPR},
+  address = {Nashville, Tennessee, USA},
+  month = jun,
+  year = {2021}
+}
+```
+If you use the baseline TbD method, please cite:
+```bibtex
+@inproceedings{Kotera-et-al-ICCVW-2019,
+  author = {Jan Kotera and Denys Rozumnyi and Filip Sroubek and Jiri Matas},
+  title = {Intra-frame Object Tracking by Deblatting},
+  booktitle = {Internatioal Conference on Computer Vision Workshop (ICCVW), 
+  Visual Object Tracking Challenge Workshop, 2019},
+  address = {Seoul, South Korea},
+  month = oct,
+  year = {2019}
+}
+```
+If you use the baseline TbD-3D or TbD-O method, please cite:
+```bibtex
+@inproceedings{Rozumnyi-et-al-CVPR-2020,
+  author = {Denys Rozumnyi and Jan Kotera and Filip Sroubek and Jiri Matas},
+  title = {Sub-frame Appearance and 6D Pose Estimation of Fast Moving Objects},
+  booktitle = {CVPR},
+  address = {Seattle, Washington, USA},
+  month = jun,
+  year = {2020}
+}
+```
+Some ideas are taken from:
+```bibtex
+@inproceedings{Rozumnyi-et-al-CVPR-2017,
+  author = {Denys Rozumnyi and Jan Kotera and Filip Sroubek and Lukas Novotny and Jiri Matas},
+  title = {The World of Fast Moving Objects},
+  booktitle = {CVPR},
+  address = {Honolulu, Hawaii, USA},
+  month = jul,
+  year = {2017}
+}
