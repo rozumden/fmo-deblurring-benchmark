@@ -17,10 +17,6 @@ def parse_args():
 def main():
 	args = parse_args()
 
-	baseline_im = lambda I,B,bbox,nsplits: (np.repeat(I[:,:,:,None], nsplits, 3), None)
-	args.method_name = 'Im'
-	run_benchmark(args, baseline_im)
-
 	baseline_im = lambda I,B,bbox,nsplits: (np.repeat(B[:,:,:,None], nsplits, 3), None)
 	args.method_name = 'Bgr'
 	run_benchmark(args, baseline_im)

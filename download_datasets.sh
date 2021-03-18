@@ -14,7 +14,13 @@ unzip ${MYPATH}TbD-3D/TbD-3D-imgs.zip -d ${MYPATH}TbD-3D/
 rm ${MYPATH}TbD-3D/TbD-3D-imgs.zip
 
 # TbD dataset
-mkdir ${MYPATH}TbD_GC
+mkdir ${MYPATH}TbD
 wget http://ptak.felk.cvut.cz/personal/rozumden/TbD_imgs_upd.zip -P ${MYPATH}TbD
 unzip ${MYPATH}TbD/TbD_imgs_upd.zip -d ${MYPATH}TbD/
+rm ${MYPATH}TbD/TbD_imgs_upd.zip
+# download templates for radius
+wget http://ptak.felk.cvut.cz/personal/rozumden/TbD.zip -P ${MYPATH}TbD
+unzip ${MYPATH}TbD/TbD.zip -d ${MYPATH}TbD/
 rm ${MYPATH}TbD/TbD.zip
+mv ${MYPATH}TbD/TbD_GC/templates ${MYPATH}TbD/
+rm -r ${MYPATH}TbD/TbD_GC
