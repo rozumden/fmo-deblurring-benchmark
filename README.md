@@ -31,15 +31,15 @@ Two baselines, one that always outputs the input image, and another that output 
 
 #### Deblatting
 
-To evaluate this method, please check out the sub-module https://github.com/rozumden/deblatting_python. We provide three versions of deblatting: classical deblatting with single appearance (TbD), deblatting with chanring appearance (TbD-3D), and deblatting with trajectory oracle (TbD-O). Examples are shown in `example_deblatting.py`.
+To evaluate this method, please check out the [deblatting sub-module](https://github.com/rozumden/deblatting_python). We provide three versions of deblatting: classical deblatting with single appearance (TbD), deblatting with chanring appearance (TbD-3D), and deblatting with trajectory oracle (TbD-O). Examples are shown in `example_deblatting.py`.
 
 #### DeFMO - current state-of-the-art
 
-To evaluate this method, please check out the sub-module https://github.com/rozumden/DeFMO. Example is shown in `example_defmo.py`.
+To evaluate this method, please check out the [DeFMO sub-module](https://github.com/rozumden/DeFMO). Example is shown in `example_defmo.py`.
 
 Reference
 ------------
-If you use this repository, please cite the following publication (https://arxiv.org/abs/2012.00595):
+If you use this repository, please cite the following [publication](https://arxiv.org/abs/2012.00595):
 
 ```bibtex
 @inproceedings{defmo,
