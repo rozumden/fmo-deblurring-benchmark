@@ -13,7 +13,7 @@ bash download_datasets.sh
 
 Implement a function that takes as input image `I [w, h, 3]`, background `B [w, h, 3]`, bounding box of approximation FMO location, the required number of generated sub-frames `n` (temporal super-resolution), and an approximate object size. Your method should output temporal super-resolution mini-video of size `[w, h, 3, n]`. Optionally, if you want to evaluate trajectory accuracy, output the sub-frame object trajectory of size `[2, n]` or `None`.
 
-An example of a dummy algorithm that always outputs the input image:
+An example of a dummy algorithm that always outputs the input image and does not evaluate the trajectory accuracy:
 
 ```python
 def my_deblur(I,B,bbox,nsplits,radius):
@@ -31,15 +31,15 @@ Two baselines, one that always outputs the input image, and another that output 
 
 #### Deblatting
 
-To evaluate this method, please check out the sub-module [ https://github.com/rozumden/deblatting_python ]. We provide three versions of deblatting: classical deblatting with single appearance (TbD), deblatting with chanring appearance (TbD-3D), and deblatting with trajectory oracle (TbD-O). Examples are shown in `example_deblatting.py`.
+To evaluate this method, please check out the [deblatting sub-module](https://github.com/rozumden/deblatting_python). We provide three versions of deblatting: classical deblatting with single appearance (TbD), deblatting with chanring appearance (TbD-3D), and deblatting with trajectory oracle (TbD-O). Examples are shown in `example_deblatting.py`.
 
 #### DeFMO - current state-of-the-art
 
-To evaluate this method, please check out the sub-module [ https://github.com/rozumden/DeFMO ]. Example is shown in `example_defmo.py`.
+To evaluate this method, please check out the [DeFMO sub-module](https://github.com/rozumden/DeFMO). Example is shown in `example_defmo.py`.
 
 Reference
 ------------
-If you use this repository, please cite the following publication ( https://arxiv.org/abs/2012.00595 ):
+If you use this repository, please cite the following [publication](https://arxiv.org/abs/2012.00595):
 
 ```bibtex
 @inproceedings{defmo,
