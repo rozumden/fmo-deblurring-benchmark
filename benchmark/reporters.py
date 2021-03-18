@@ -2,7 +2,7 @@ import numpy as np
 import os, glob
 import scipy.io
 import cv2
-from dataloaders.helpers import *
+from benchmark.loaders_helpers import *
 
 class GroundTruthProcessor:
 	def __init__(self, seqpath, kkf, medn):
@@ -132,8 +132,8 @@ class AverageScoreTracker:
 
 	def next(self, seqname, sst):
 		self.av_ious[self.seqi] = np.mean(sst.all_ious)
-		self.av_psnr[self.seqi] = np.mean(sst.all_psnr[sst.all_psnr > 0])
-		self.av_ssim[self.seqi] = np.mean(sst.all_ssim[sst.all_ssim > 0])
+		self.av_psnr[self.seqi] = np.mean(sst.all_psnr)
+		self.av_ssim[self.seqi] = np.mean(sst.all_ssim)
 		print('{}: Finished seq {}, avg. TIoU {:.3f}, PSNR {:.3f} dB, SSIM {:.3f}'.format(self.algname,seqname, self.av_ious[self.seqi], self.av_psnr[self.seqi], self.av_ssim[self.seqi]))
 		self.seqi += 1
 

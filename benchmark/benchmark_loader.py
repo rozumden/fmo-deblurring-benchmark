@@ -1,17 +1,21 @@
 import os
 import numpy as np
 import time
-from dataloaders.helpers import *
-from dataloaders.reporters import *
+from benchmark.loaders_helpers import *
+from benchmark.reporters import *
 
 def run_benchmark(args, method):
 	files = get_falling_dataset(args.falling_path)
 	evaluate_on(files, method, args)
-
+	files = get_tbd3d_dataset(args.tbd3d_path)
+	evaluate_on(files, method, args)
+	files = get_tbd_dataset(args.tbd_path)
+	evaluate_on(files, method, args)
+	
 def evaluate_on(files, method, args):
 	dataset_name = os.path.split(os.path.split(os.path.split(files[0])[0])[0])[-1]
 	log_folder = os.path.join(args.visualization_path, dataset_name+'_eval/')
-	medn = 7
+	medn = 50
 	
 	av_score_tracker = AverageScoreTracker(files.shape, args.method_name)
 	
@@ -30,7 +34,10 @@ def evaluate_on(files, method, args):
 			bbox_tight = bbox_fmo(extend_bbox_uniform(bbox.copy(),10,I.shape),gt_hs,B)
 
 			start = time.time()
-			est_hs, est_traj = method(I,B,bbox_tight,gtp.nsplits)
+			if args.add_traj:
+				est_hs, est_traj = method(I,B,bbox_tight,gtp.nsplits,radius,gt_traj)
+			else:
+				est_hs, est_traj = method(I,B,bbox_tight,gtp.nsplits,radius)
 			av_score_tracker.next_time(time.time() - start)
 
 			gt_hs_crop = crop_only(gt_hs, bbox_tight)
