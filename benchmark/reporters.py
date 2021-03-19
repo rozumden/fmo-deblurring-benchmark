@@ -43,7 +43,7 @@ class GroundTruthProcessor:
 		if os.path.exists(os.path.join(seqpath,'gtr.txt')):
 			rads = np.loadtxt(os.path.join(seqpath,'gtr.txt'))
 		elif os.path.exists(os.path.join(folder,'templates')):
-			template_path = os.path.join(folder,'templates',seqname.replace('-gc','') + '_template.mat')
+			template_path = os.path.join(folder,'templates',seqname + '_template.mat')
 			data = scipy.io.loadmat(template_path)
 			template = data['template']
 			rads = (template.shape[0]/2)/data['scale']
@@ -56,10 +56,6 @@ class GroundTruthProcessor:
 			pars = np.r_[np.zeros((start_ind*2,self.nsplits)),pars]
 			rads = np.r_[np.zeros((start_ind,self.nsplits)),rads]
 		self.hspath_base = os.path.join(folder,'imgs_gt',seqname)
-		if not os.path.exists(os.path.join(self.hspath_base,"{:08d}.png".format(1))):
-			self.hspath_base = os.path.join(folder,'imgs_gt',seqname.replace('_newGT','')[3:-5])
-		if not os.path.exists(os.path.join(self.hspath_base, "{:08d}.png".format(1))):
-			self.hspath_base = os.path.join(folder, 'imgs_gt',seqname.replace('_newGT','')[3:-6])
 		self.use_hs = os.path.exists(os.path.join(self.hspath_base,"{:08d}.png".format(1)))
 		self.start_zero = 1-int(os.path.exists(os.path.join(self.hspath_base,"{:08d}.png".format(0))))
 		self.pars = pars

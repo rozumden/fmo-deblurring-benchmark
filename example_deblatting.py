@@ -14,7 +14,7 @@ def parse_args():
 	parser.add_argument("--tbd_path", default='/cluster/home/denysr/scratch/dataset/TbD', required=False)
 	parser.add_argument("--tbd3d_path", default='/cluster/home/denysr/scratch/dataset/TbD-3D', required=False)
 	parser.add_argument("--falling_path", default='/cluster/home/denysr/scratch/dataset/falling_objects', required=False)
-	parser.add_argument("--verbose", default=True)
+	parser.add_argument("--verbose", default=False)
 	parser.add_argument("--visualization_path", default='/cluster/home/denysr/tmp', required=False)
 	parser.add_argument("--save_visualization", default=False, required=False)
 	return parser.parse_args()
@@ -27,8 +27,9 @@ def deblur_tbdo(I,B,bbox,nsplits,radius,gt_traj):
 	est_hs = np.zeros(I.shape+(nsplits,))
 	for tmki in range(nsplits): 
 		if np.sum(Hso[:,:,0,tmki]) == 0: 
-			breakpoint()
-		Hsc = Hso[:,:,0,tmki]/np.sum(Hso[:,:,0,tmki])
+			Hsc = Hso[:,:,0,tmki-1]/np.sum(Hso[:,:,0,tmki-1])
+		else:
+			Hsc = Hso[:,:,0,tmki]/np.sum(Hso[:,:,0,tmki])
 		est_hs[:,:,:,tmki] = fmo_model(B,Hsc,rgba_tbd3d_or[:,:,:3,tmki],rgba_tbd3d_or[:,:,3,tmki])
 	return est_hs, gt_traj
 
