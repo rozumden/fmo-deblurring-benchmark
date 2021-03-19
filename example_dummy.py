@@ -22,9 +22,9 @@ def main():
 	args.method_name = 'Im'
 	run_benchmark(args, baseline_im)
 
-	baseline_im = lambda I,B,bbox,nsplits,radius: (np.repeat(B[:,:,:,None], nsplits, 3), None)
+	baseline_bgr = lambda I,B,bbox,nsplits,radius: (np.repeat(B[:,:,:,None], nsplits, 3), None)
 	args.method_name = 'Bgr'
-	run_benchmark(args, baseline_im)
+	run_benchmark(args, baseline_bgr)
 
 if __name__ == "__main__":
     main()
