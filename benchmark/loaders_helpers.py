@@ -8,12 +8,12 @@ import glob
 import os
 
 def get_tbd_dataset(folder):
-	files = np.array(glob.glob(os.path.join(folder, "imgs", '*-8*')))
-	files = files[['golf' not in f  for f in files]]
-	files = np.r_[files, np.array(glob.glob(os.path.join(folder, "imgs", '*-12')))]
+	files = np.array(glob.glob(os.path.join(folder, "imgs", '*_*')))
 	files = files[['ping_wall' not in f  for f in files]]
 	files = files[['fall_coin' not in f  for f in files]]
-	files.sort()
+	filenames = [os.path.split(fff)[-1].replace('VS_','') for fff in files]
+	inds = np.argsort(filenames)
+	files = files[inds]
 	return files
 
 def get_tbd3d_dataset(folder):
