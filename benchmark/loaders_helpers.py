@@ -267,3 +267,17 @@ def fmo_model(B,H,F,M):
 def rgba2hs(rgba, bgr):
     return rgba[:,:,:3]*rgba[:,:,3:] + bgr[:,:,:,None]*(1-rgba[:,:,3:])
 
+def bbox_detect_hs(gt_hs,B):
+    dI = (np.sum(np.abs(gt_hs-B),2) > 0.1).astype(float)
+    labeled = label(dI)
+    regions = regionprops(labeled)
+    ind = -1
+    maxarea = 0
+    for ki in range(len(regions)):
+        if regions[ki].area > maxarea:
+            ind = ki
+            maxarea = regions[ki].area
+    if ind == -1:
+        return []
+    bbox = np.array(regions[ind].bbox).astype(int)
+    return bbox

@@ -50,7 +50,7 @@ def main():
 	encoder.train(False)
 	rendering.train(False)
 
-	def deblur_defmo(I,B,bbox_tight,nsplits,radius):
+	def deblur_defmo(I,B,bbox_tight,nsplits,radius,obj_dim):
 		bbox = extend_bbox(bbox_tight.copy(),4*np.max(radius),g_resolution_y/g_resolution_x,I.shape)
 		im_crop = crop_resize(I, bbox, (g_resolution_x, g_resolution_y))
 		bgr_crop = crop_resize(B, bbox, (g_resolution_x, g_resolution_y))

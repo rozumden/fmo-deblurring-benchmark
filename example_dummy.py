@@ -18,11 +18,11 @@ def main():
 	args = parse_args()
 	args.add_traj = False
 	
-	baseline_im = lambda I,B,bbox,nsplits,radius: (np.repeat(I[:,:,:,None], nsplits, 3), None)
+	baseline_im = lambda I,B,bbox,nsplits,radius,obj_dim: (np.repeat(I[:,:,:,None], nsplits, 3), None)
 	args.method_name = 'Im'
 	run_benchmark(args, baseline_im)
 
-	baseline_bgr = lambda I,B,bbox,nsplits,radius: (np.repeat(B[:,:,:,None], nsplits, 3), None)
+	baseline_bgr = lambda I,B,bbox,nsplits,radius,obj_dim: (np.repeat(B[:,:,:,None], nsplits, 3), None)
 	args.method_name = 'Bgr'
 	run_benchmark(args, baseline_bgr)
 

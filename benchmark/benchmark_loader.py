@@ -32,12 +32,16 @@ def evaluate_on(files, method, args):
 
 			bbox = extend_bbox_uniform(bbox,radius,I.shape)
 			bbox_tight = bbox_fmo(extend_bbox_uniform(bbox.copy(),10,I.shape),gt_hs,B)
+			bbox_temp = bbox_detect_hs(crop_only(gt_hs[:,:,:,0],bbox_tight), crop_only(B,bbox_tight))
+			if len(bbox_temp) == 0:
+				bbox_temp = bbox_tight
+			obj_dim = bbox_temp[2:] - bbox_temp[:2]
 
 			start = time.time()
 			if args.add_traj:
-				est_hs, est_traj = method(I,B,bbox_tight,gtp.nsplits,radius,gt_traj)
+				est_hs, est_traj = method(I,B,bbox_tight,gtp.nsplits,radius,obj_dim,gt_traj)
 			else:
-				est_hs, est_traj = method(I,B,bbox_tight,gtp.nsplits,radius)
+				est_hs, est_traj = method(I,B,bbox_tight,gtp.nsplits,radius,obj_dim)
 			av_score_tracker.next_time(time.time() - start)
 
 			gt_hs_crop = crop_only(gt_hs, bbox_tight)
