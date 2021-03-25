@@ -38,11 +38,11 @@ To evaluate this method, please check out the [deblatting sub-module](https://gi
 To evaluate this method, please check out the [DeFMO sub-module](https://github.com/rozumden/DeFMO). Example is shown in `example_defmo.py`.
 
 ### Scores
-#### Falling Objects dataset.
-| Score | Background | Image | Jin et al. | DeblurGAN-v2 | TbD | TbD-3D | DeFMO | (TbD-3D-Oracle) 
-| ----- | :---:      | :---: | :---:      | :---:        | :-: | :---:  | :---: | :---: 
-| TIoU  |  0         | 0     |        0   |      0       |0.539| 0.539  |0.684  | 1.000
-| PSNR  |    |
+#### Falling Objects dataset
+| Score | Background | Image | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D | DeFMO      | (TbD-3D-Oracle) 
+| ----- | :---:      | :---: | :---:      | :---:        | :-:    | :---:  | :---:      | :---: 
+| TIoU  |  0         | 0     |        0   |      0       | 0.539  | 0.539  | **0.684**  | 1.000
+| PSNR  | 19.71      | 23.76 |  23.54     |    23.36     | 20.53  | 23.42  | **26.83**  | 22.82
 | SSIM  |    |
 
 Reference
