@@ -61,7 +61,7 @@ Mostly spherical but significantly textured objects moving in 3D.
 
 
 #### TbD dataset
-Mostly spherical and uniformly colored objects moving on a place parallel to the camera plane.
+Mostly spherical and uniformly colored objects moving in a plane parallel to the camera plane.
 
 | Score | Bg         |    Im | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D   | DeFMO      | (TbD-3D-Oracle) 
 | ----- | :---:      | :---: | :---:      | :---:        | :-:    | :---:    | :---:      | :---: 
