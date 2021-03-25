@@ -20,7 +20,8 @@ def my_deblur(I,B,bbox,nsplits,radius):
         return np.repeat(I[:,:,:,None], nsplits, 3), None
 ```
 
-### Baselines
+Baselines
+------------
 
 We provide several baseline and state-of-the-art methods.
 
@@ -37,7 +38,8 @@ To evaluate this method, please check out the [deblatting sub-module](https://gi
 
 To evaluate this method, please check out the [DeFMO sub-module](https://github.com/rozumden/DeFMO). Example is shown in `example_defmo.py`.
 
-### Scores
+Scores
+------------
 TbD-3D-Oracle has access to the ground-truth trajectory. Therefore, it's not a competitive baseline and is provided just for the reference.
 #### Falling Objects dataset
 | Score | Background | Image | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D | DeFMO      | (TbD-3D-Oracle) 
