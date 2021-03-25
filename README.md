@@ -39,8 +39,8 @@ To evaluate this method, please check out the [DeFMO sub-module](https://github.
 
 ### Scores
 #### Falling Objects dataset.
-| Score | Background |
-| ----- | ---------- |
+| Score | Background | Image | Jin et al. | DeblurGAN-v2 | TbD | TbD-3D | DeFMO | (TbD-3D-Oracle) 
+| ----- | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ 
 | TIoU  |    |
 | PSNR  |    |
 | SSIM  |    |
