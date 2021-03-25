@@ -42,6 +42,17 @@ Scores
 ------------
 TbD-3D-Oracle has access to the ground-truth trajectory. Therefore, it's not a competitive baseline and is provided just for the reference.
 #### Falling Objects dataset
+Arbitrary shaped and textured objects.
+
+| Score | Background | Image | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D | DeFMO      | (TbD-3D-Oracle) 
+| ----- | :---:      | :---: | :---:      | :---:        | :-:    | :---:  | :---:      | :---: 
+| TIoU  |  0         | 0     |        0   |      0       | 0.539  | 0.539  | **0.684**  | 1.000
+| PSNR  | 19.71      | 23.76 |  23.54     |    23.36     | 20.53  | 23.42  | **26.83**  | 22.82
+| SSIM  | 0.456      | 0.594 | 0.575      |   0.588      | 0.591  | 0.671  | **0.753**  | 0.701  
+
+#### TbD-3D dataset
+Mostly spherical but significantly textured objects.
+
 | Score | Background | Image | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D | DeFMO      | (TbD-3D-Oracle) 
 | ----- | :---:      | :---: | :---:      | :---:        | :-:    | :---:  | :---:      | :---: 
 | TIoU  |  0         | 0     |        0   |      0       | 0.539  | 0.539  | **0.684**  | 1.000
@@ -49,6 +60,14 @@ TbD-3D-Oracle has access to the ground-truth trajectory. Therefore, it's not a c
 | SSIM  | 0.456      | 0.594 | 0.575      |   0.588      | 0.591  | 0.671  | **0.753**  | 0.701  
 
 
+#### TbD dataset
+Mostly spherical and uniformly colored objects.
+
+| Score | Background | Image | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D | DeFMO      | (TbD-3D-Oracle) 
+| ----- | :---:      | :---: | :---:      | :---:        | :-:    | :---:  | :---:      | :---: 
+| TIoU  |  0         | 0     |        0   |      0       | 0.539  | 0.539  | **0.684**  | 1.000
+| PSNR  | 19.71      | 23.76 |  23.54     |    23.36     | 20.53  | 23.42  | **26.83**  | 22.82
+| SSIM  | 0.456      | 0.594 | 0.575      |   0.588      | 0.591  | 0.671  | **0.753**  | 0.701  
 
 Reference
 ------------
