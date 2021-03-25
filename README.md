@@ -51,7 +51,7 @@ Arbitrary shaped and textured objects.
 | SSIM  | 0.456      | 0.594 | 0.575      |   0.588      | 0.591  | 0.671  | **0.753**  | 0.701  
 
 #### TbD-3D dataset
-Mostly spherical but significantly textured objects.
+Mostly spherical but significantly textured objects moving in 3D.
 
 | Score | Bg         |    Im | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D | DeFMO      | (TbD-3D-Oracle) 
 | ----- | :---:      | :---: | :---:      | :---:        | :-:    | :---:  | :---:      | :---: 
@@ -61,7 +61,7 @@ Mostly spherical but significantly textured objects.
 
 
 #### TbD dataset
-Mostly spherical and uniformly colored objects.
+Mostly spherical and uniformly colored objects moving on a place parallel to the camera plane.
 
 | Score | Bg         |    Im | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D   | DeFMO      | (TbD-3D-Oracle) 
 | ----- | :---:      | :---: | :---:      | :---:        | :-:    | :---:    | :---:      | :---: 
