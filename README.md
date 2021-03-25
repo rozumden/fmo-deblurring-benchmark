@@ -37,6 +37,14 @@ To evaluate this method, please check out the [deblatting sub-module](https://gi
 
 To evaluate this method, please check out the [DeFMO sub-module](https://github.com/rozumden/DeFMO). Example is shown in `example_defmo.py`.
 
+### Scores
+#### Falling Objects dataset.
+| Score | Background |
+| ----- | ---------- |
+| TIoU  |    |
+| PSNR  |    |
+| SSIM  |    |
+
 Reference
 ------------
 If you use this repository, please cite the following [publication](https://arxiv.org/abs/2012.00595):
