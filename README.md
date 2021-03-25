@@ -44,7 +44,7 @@ TbD-3D-Oracle has access to the ground-truth trajectory. Therefore, it's not a c
 #### Falling Objects dataset
 Arbitrary shaped and textured objects.
 
-| Score | Background | Image | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D | DeFMO      | (TbD-3D-Oracle) 
+| Score | Bg         |    Im | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D | DeFMO      | (TbD-3D-Oracle) 
 | ----- | :---:      | :---: | :---:      | :---:        | :-:    | :---:  | :---:      | :---: 
 | TIoU  |  0         | 0     |        0   |      0       | 0.539  | 0.539  | **0.684**  | 1.000
 | PSNR  | 19.71      | 23.76 |  23.54     |    23.36     | 20.53  | 23.42  | **26.83**  | 22.82
@@ -53,7 +53,7 @@ Arbitrary shaped and textured objects.
 #### TbD-3D dataset
 Mostly spherical but significantly textured objects.
 
-| Score | Background | Image | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D | DeFMO      | (TbD-3D-Oracle) 
+| Score | Bg         |    Im | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D | DeFMO      | (TbD-3D-Oracle) 
 | ----- | :---:      | :---: | :---:      | :---:        | :-:    | :---:  | :---:      | :---: 
 | TIoU  |  0         | 0     |        0   |      0       | 0.598  | 0.598  | **0.879**  | 1.000
 | PSNR  | 19.81      | 24.80 | 24.52      | 23.58        | 18.84  | 23.13  | **26.23**  | 24.63
@@ -63,7 +63,7 @@ Mostly spherical but significantly textured objects.
 #### TbD dataset
 Mostly spherical and uniformly colored objects.
 
-| Score | Background | Image | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D   | DeFMO      | (TbD-3D-Oracle) 
+| Score | Bg         |    Im | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D   | DeFMO      | (TbD-3D-Oracle) 
 | ----- | :---:      | :---: | :---:      | :---:        | :-:    | :---:    | :---:      | :---: 
 | TIoU  |  0         | 0     |        0   |      0       | 0.542  | 0.542    | **0.550**  | 1.000
 | PSNR  | 21.48      | 25.06 | 24.90      | 24.27        | 23.22  | 25.21    | **25.57**  |  26.23
