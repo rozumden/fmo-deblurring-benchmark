@@ -1,0 +1,58 @@
+Sender: LSF System <lsfadmin@lo-s4-080>
+Subject: Job 15407700: <python example_deblatting.py> in cluster <leonhard> Done
+
+Job <python example_deblatting.py> was submitted from host <lo-login-01> by user <denysr> in cluster <leonhard> at Thu Mar 25 11:33:45 2021
+Job was executed on host(s) <lo-s4-080>, in queue <gpu.24h>, as user <denysr> in cluster <leonhard> at Thu Mar 25 11:33:58 2021
+</cluster/home/denysr> was used as the home directory.
+</cluster/home/denysr/src/fmo-deblurring-benchmark> was used as the working directory.
+Started at Thu Mar 25 11:33:58 2021
+Terminated at Thu Mar 25 21:19:31 2021
+Results reported at Thu Mar 25 21:19:31 2021
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+python example_deblatting.py
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   34668.29 sec.
+    Max Memory :                                 1690 MB
+    Average Memory :                             1250.83 MB
+    Total Requested Memory :                     20000.00 MB
+    Delta Memory :                               18310.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   35140 sec.
+    Turnaround time :                            35146 sec.
+
+The output (if any) follows:
+
+Sequence HighFPS_GT_depth2 has 48 frames
+TbD-O: Finished seq HighFPS_GT_depth2, avg. TIoU 1.000, PSNR 22.079 dB, SSIM 0.639
+Sequence HighFPS_GT_depthb2 has 81 frames
+TbD-O: Finished seq HighFPS_GT_depthb2, avg. TIoU 1.000, PSNR 23.261 dB, SSIM 0.602
+Sequence HighFPS_GT_depthf1 has 46 frames
+TbD-O: Finished seq HighFPS_GT_depthf1, avg. TIoU 1.000, PSNR 27.661 dB, SSIM 0.720
+Sequence HighFPS_GT_depthf2 has 50 frames
+TbD-O: Finished seq HighFPS_GT_depthf2, avg. TIoU 1.000, PSNR 27.029 dB, SSIM 0.715
+Sequence HighFPS_GT_depthf3 has 37 frames
+TbD-O: Finished seq HighFPS_GT_depthf3, avg. TIoU 1.000, PSNR 26.687 dB, SSIM 0.726
+Sequence HighFPS_GT_out1 has 57 frames
+TbD-O: Finished seq HighFPS_GT_out1, avg. TIoU 1.000, PSNR 21.598 dB, SSIM 0.728
+Sequence HighFPS_GT_out2 has 50 frames
+TbD-O: Finished seq HighFPS_GT_out2, avg. TIoU 1.000, PSNR 21.419 dB, SSIM 0.727
+Sequence HighFPS_GT_outa1 has 47 frames
+TbD-O: Finished seq HighFPS_GT_outa1, avg. TIoU 1.000, PSNR 27.436 dB, SSIM 0.713
+Sequence HighFPS_GT_outb1 has 41 frames
+TbD-O: Finished seq HighFPS_GT_outb1, avg. TIoU 1.000, PSNR 25.436 dB, SSIM 0.710
+Sequence HighFPS_GT_outf1 has 60 frames
+TbD-O: Finished seq HighFPS_GT_outf1, avg. TIoU 1.000, PSNR 25.838 dB, SSIM 0.775
+AVERAGES
+TbD-O: TIoU 1.000, PSNR 24.844 dB, SSIM 0.705
+TbD-O: time 65.855 seconds

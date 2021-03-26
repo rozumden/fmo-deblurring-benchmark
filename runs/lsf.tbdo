@@ -1,0 +1,100 @@
+Sender: LSF System <lsfadmin@lo-s4-034>
+Subject: Job 15403325: <python example_deblatting.py> in cluster <leonhard> Done
+
+Job <python example_deblatting.py> was submitted from host <lo-login-01> by user <denysr> in cluster <leonhard> at Thu Mar 25 10:46:53 2021
+Job was executed on host(s) <lo-s4-034>, in queue <gpu.24h>, as user <denysr> in cluster <leonhard> at Thu Mar 25 10:46:59 2021
+</cluster/home/denysr> was used as the home directory.
+</cluster/home/denysr/src/fmo-deblurring-benchmark> was used as the working directory.
+Started at Thu Mar 25 10:46:59 2021
+Terminated at Fri Mar 26 09:08:09 2021
+Results reported at Fri Mar 26 09:08:09 2021
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+python example_deblatting.py
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   79520.63 sec.
+    Max Memory :                                 5943 MB
+    Average Memory :                             1501.07 MB
+    Total Requested Memory :                     20000.00 MB
+    Delta Memory :                               14057.00 MB
+    Max Swap :                                   -
+    Max Processes :                              3
+    Max Threads :                                4
+    Run time :                                   80492 sec.
+    Turnaround time :                            80476 sec.
+
+The output (if any) follows:
+
+Sequence v_box_GTgamma has 22 frames
+TbD-O: Finished seq v_box_GTgamma, avg. TIoU 1.000, PSNR 16.188 dB, SSIM 0.551
+Sequence v_cell_GTgamma has 14 frames
+TbD-O: Finished seq v_cell_GTgamma, avg. TIoU 1.000, PSNR 22.392 dB, SSIM 0.646
+Sequence v_key_GTgamma has 19 frames
+TbD-O: Finished seq v_key_GTgamma, avg. TIoU 1.000, PSNR 28.763 dB, SSIM 0.689
+Sequence v_marker_GTgamma has 11 frames
+TbD-O: Finished seq v_marker_GTgamma, avg. TIoU 1.000, PSNR 22.425 dB, SSIM 0.766
+Sequence v_pen_GTgamma has 13 frames
+TbD-O: Finished seq v_pen_GTgamma, avg. TIoU 1.000, PSNR 24.893 dB, SSIM 0.743
+Sequence v_rubber_GTgamma has 15 frames
+TbD-O: Finished seq v_rubber_GTgamma, avg. TIoU 1.000, PSNR 25.611 dB, SSIM 0.759
+AVERAGES
+TbD-O: TIoU 1.000, PSNR 23.379 dB, SSIM 0.692
+TbD-O: time 100.266 seconds
+Sequence HighFPS_GT_depth2 has 48 frames
+TbD-O: Finished seq HighFPS_GT_depth2, avg. TIoU 1.000, PSNR 22.079 dB, SSIM 0.639
+Sequence HighFPS_GT_depthb2 has 81 frames
+TbD-O: Finished seq HighFPS_GT_depthb2, avg. TIoU 1.000, PSNR 23.261 dB, SSIM 0.602
+Sequence HighFPS_GT_depthf1 has 46 frames
+TbD-O: Finished seq HighFPS_GT_depthf1, avg. TIoU 1.000, PSNR 27.661 dB, SSIM 0.720
+Sequence HighFPS_GT_depthf2 has 50 frames
+TbD-O: Finished seq HighFPS_GT_depthf2, avg. TIoU 1.000, PSNR 27.029 dB, SSIM 0.715
+Sequence HighFPS_GT_depthf3 has 37 frames
+TbD-O: Finished seq HighFPS_GT_depthf3, avg. TIoU 1.000, PSNR 26.687 dB, SSIM 0.726
+Sequence HighFPS_GT_out1 has 57 frames
+TbD-O: Finished seq HighFPS_GT_out1, avg. TIoU 1.000, PSNR 21.598 dB, SSIM 0.728
+Sequence HighFPS_GT_out2 has 50 frames
+TbD-O: Finished seq HighFPS_GT_out2, avg. TIoU 1.000, PSNR 21.419 dB, SSIM 0.727
+Sequence HighFPS_GT_outa1 has 47 frames
+TbD-O: Finished seq HighFPS_GT_outa1, avg. TIoU 1.000, PSNR 27.436 dB, SSIM 0.713
+Sequence HighFPS_GT_outb1 has 41 frames
+TbD-O: Finished seq HighFPS_GT_outb1, avg. TIoU 1.000, PSNR 25.436 dB, SSIM 0.710
+Sequence HighFPS_GT_outf1 has 60 frames
+TbD-O: Finished seq HighFPS_GT_outf1, avg. TIoU 1.000, PSNR 25.838 dB, SSIM 0.775
+AVERAGES
+TbD-O: TIoU 1.000, PSNR 24.844 dB, SSIM 0.705
+TbD-O: time 87.302 seconds
+Sequence VS_badminton_white_GX010058-8 has 40 frames
+TbD-O: Finished seq VS_badminton_white_GX010058-8, avg. TIoU 1.000, PSNR 28.819 dB, SSIM 0.768
+Sequence VS_badminton_yellow_GX010060-8 has 57 frames
+TbD-O: Finished seq VS_badminton_yellow_GX010060-8, avg. TIoU 1.000, PSNR 27.581 dB, SSIM 0.658
+Sequence fall_cube has 20 frames
+TbD-O: Finished seq fall_cube, avg. TIoU 1.000, PSNR 30.433 dB, SSIM 0.633
+Sequence hit_tennis has 30 frames
+TbD-O: Finished seq hit_tennis, avg. TIoU 1.000, PSNR 26.902 dB, SSIM 0.655
+Sequence hit_tennis2 has 26 frames
+TbD-O: Finished seq hit_tennis2, avg. TIoU 1.000, PSNR 26.896 dB, SSIM 0.731
+Sequence VS_pingpong_GX010051-8 has 58 frames
+TbD-O: Finished seq VS_pingpong_GX010051-8, avg. TIoU 1.000, PSNR 26.097 dB, SSIM 0.701
+Sequence VS_roll_golf-gc-12 has 16 frames
+TbD-O: Finished seq VS_roll_golf-gc-12, avg. TIoU 1.000, PSNR 21.622 dB, SSIM 0.707
+Sequence VS_tennis_GX010073-8 has 38 frames
+TbD-O: Finished seq VS_tennis_GX010073-8, avg. TIoU 1.000, PSNR 27.580 dB, SSIM 0.785
+Sequence throw_floor has 40 frames
+TbD-O: Finished seq throw_floor, avg. TIoU 1.000, PSNR 22.075 dB, SSIM 0.758
+Sequence throw_soft has 60 frames
+TbD-O: Finished seq throw_soft, avg. TIoU 1.000, PSNR 27.270 dB, SSIM 0.682
+Sequence throw_tennis has 45 frames
+TbD-O: Finished seq throw_tennis, avg. TIoU 1.000, PSNR 25.760 dB, SSIM 0.769
+Sequence VS_volleyball_GX010068-12 has 41 frames
+TbD-O: Finished seq VS_volleyball_GX010068-12, avg. TIoU 1.000, PSNR 25.310 dB, SSIM 0.694
+AVERAGES
+TbD-O: TIoU 1.000, PSNR 26.362 dB, SSIM 0.712
+TbD-O: time 46.678 seconds
