@@ -47,8 +47,8 @@ Arbitrary shaped and textured objects.
 | Score | Bg         |    Im | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D | DeFMO      | (TbD-3D-Oracle) 
 | ----- | :---:      | :---: | :---:      | :---:        | :-:    | :---:  | :---:      | :---: 
 | TIoU  |  0         | 0     |        0   |      0       | 0.539  | 0.539  | **0.684**  | 1.000
-| PSNR  | 19.71      | 23.76 |  23.54     |    23.36     | 20.53  | 23.42  | **26.83**  | 22.82
-| SSIM  | 0.456      | 0.594 | 0.575      |   0.588      | 0.591  | 0.671  | **0.753**  | 0.701  
+| PSNR  | 19.71      | 23.76 |  23.54     |    23.36     | 20.53  | 23.42  | **26.83**  | 23.38
+| SSIM  | 0.456      | 0.594 | 0.575      |   0.588      | 0.591  | 0.671  | **0.753**  | 0.692  
 
 #### TbD-3D dataset
 Mostly spherical but significantly textured objects moving in 3D.
@@ -56,8 +56,8 @@ Mostly spherical but significantly textured objects moving in 3D.
 | Score | Bg         |    Im | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D | DeFMO      | (TbD-3D-Oracle) 
 | ----- | :---:      | :---: | :---:      | :---:        | :-:    | :---:  | :---:      | :---: 
 | TIoU  |  0         | 0     |        0   |      0       | 0.598  | 0.598  | **0.879**  | 1.000
-| PSNR  | 19.81      | 24.80 | 24.52      | 23.58        | 18.84  | 23.13  | **26.23**  | 24.63
-| SSIM  |  0.426     | 0.640 | 0.590      | 0.603        | 0.504  | 0.651  | **0.699**  | 0.703
+| PSNR  | 19.81      | 24.80 | 24.52      | 23.58        | 18.84  | 23.13  | **26.23**  | 24.84
+| SSIM  |  0.426     | 0.640 | 0.590      | 0.603        | 0.504  | 0.651  | **0.699**  | 0.705
 
 
 #### TbD dataset
@@ -66,7 +66,7 @@ Mostly spherical and uniformly colored objects moving in a plane parallel to the
 | Score | Bg         |    Im | Jin et al. | DeblurGAN-v2 | TbD    | TbD-3D   | DeFMO      | (TbD-3D-Oracle) 
 | ----- | :---:      | :---: | :---:      | :---:        | :-:    | :---:    | :---:      | :---: 
 | TIoU  |  0         | 0     |        0   |      0       | 0.542  | 0.542    | **0.550**  | 1.000
-| PSNR  | 21.48      | 25.06 | 24.90      | 24.27        | 23.22  | 25.21    | **25.57**  |  26.23
+| PSNR  | 21.48      | 25.06 | 24.90      | 24.27        | 23.22  | 25.21    | **25.57**  | 26.36
 | SSIM  |  0.466     | 0.568 | 0.530      | 0.537        | 0.605  |**0.674** |  0.602     | 0.712
 
 Reference
