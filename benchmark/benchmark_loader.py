@@ -1,8 +1,8 @@
 import os
 import numpy as np
 import time
-from benchmark.loaders_helpers import *
-from benchmark.reporters import *
+from .loaders_helpers import *
+from .reporters import *
 
 def run_benchmark(args, method):
 	files = get_falling_dataset(args.falling_path)

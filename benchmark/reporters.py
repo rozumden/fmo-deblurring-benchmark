@@ -2,7 +2,7 @@ import numpy as np
 import os, glob
 import scipy.io
 import cv2
-from benchmark.loaders_helpers import *
+from .loaders_helpers import *
 
 class GroundTruthProcessor:
 	def __init__(self, seqpath, kkf, medn):
