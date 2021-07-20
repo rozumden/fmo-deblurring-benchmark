@@ -138,8 +138,10 @@ class AverageScoreTracker:
 
 	def close(self):
 		print('AVERAGES')
-		print('{}: TIoU {:.3f}, PSNR {:.3f} dB, SSIM {:.3f}'.format(self.algname, np.nanmean(self.av_ious), np.nanmean(self.av_psnr), np.nanmean(self.av_ssim)))
+		means = np.nanmean(self.av_ious), np.nanmean(self.av_psnr), np.nanmean(self.av_ssim)
+		print('{}: TIoU {:.3f}, PSNR {:.3f} dB, SSIM {:.3f}'.format(self.algname, *means))
 		print('{}: time {:.3f} seconds'.format(self.algname, np.nanmean(np.array(self.av_times))))
+		return means
 
 #######################################################################################################################
 #######################################################################################################################

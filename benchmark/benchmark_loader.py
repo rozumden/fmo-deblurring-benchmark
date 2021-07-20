@@ -77,5 +77,5 @@ def evaluate_on(files, method, args):
 		if args.save_visualization:
 			logger.close()
 
-	av_score_tracker.close()
+	return av_score_tracker.close()
 
