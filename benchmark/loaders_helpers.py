@@ -96,12 +96,14 @@ def imread(name):
 		return img[:,:,[2,1,0,3]]/65535
 
 def imwrite(im, name):
+    im = im.copy()
     im[im<0]=0
     im[im>1]=1
     cv2.imwrite(name, im[:,:,[2,1,0]]*255)
 
 
 def extend_bbox(bbox,ext,aspect_ratio,shp):
+    bbox = bbox.copy()
     height, width = bbox[2] - bbox[0], bbox[3] - bbox[1]
             
     h2 = height + ext
@@ -124,6 +126,7 @@ def extend_bbox(bbox,ext,aspect_ratio,shp):
     return bbox
 
 def extend_bbox_uniform(bbox,ext,shp):
+    bbox = bbox.copy()
     bbox[0] -= ext
     bbox[2] += ext
     bbox[1] -= ext
@@ -182,6 +185,7 @@ def crop_only(Is, bbox):
     return Is[bbox[0]:bbox[2], bbox[1]:bbox[3]]
 
 def rev_crop_resize_traj(inp, bbox, res):
+    inp = inp.copy()
     inp[0] *= ( (bbox[2]-bbox[0])/res[1])
     inp[1] *= ( (bbox[3]-bbox[1])/res[0])
     inp[0] += bbox[0]
@@ -211,6 +215,7 @@ def write_trajectory(Img, traj):
     
 
 def renderTraj(pars, H):
+    H = H.copy()
     ## Input: pars is either 2x2 (line) or 2x3 (parabola)
     if pars.shape[1] == 2:
         pars = np.concatenate( (pars, np.zeros((2,1))),1)
