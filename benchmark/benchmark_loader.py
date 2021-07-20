@@ -73,7 +73,8 @@ def evaluate_on(files, method, args):
 			if args.verbose:
 				seq_score_tracker.report(gtp.seqname, kk)
 
-		av_score_tracker.next(gtp.seqname, seq_score_tracker)
+		means = seq_score_tracker.close()
+		av_score_tracker.next(gtp.seqname, means)
 		if args.save_visualization:
 			logger.close()
 

@@ -126,10 +126,8 @@ class AverageScoreTracker:
 		self.seqi = 0
 		self.algname = algname
 
-	def next(self, seqname, sst):
-		self.av_ious[self.seqi] = np.mean(sst.all_ious.values())
-		self.av_psnr[self.seqi] = np.mean(sst.all_psnr.values())
-		self.av_ssim[self.seqi] = np.mean(sst.all_ssim.values())
+	def next(self, seqname, means):
+		self.av_ious[self.seqi], self.av_psnr[self.seqi], self.av_ssim[self.seqi] = means
 		print('{}: Finished seq {}, avg. TIoU {:.3f}, PSNR {:.3f} dB, SSIM {:.3f}'.format(self.algname,seqname, self.av_ious[self.seqi], self.av_psnr[self.seqi], self.av_ssim[self.seqi]))
 		self.seqi += 1
 
@@ -165,7 +163,14 @@ class SequenceScoreTracker:
 		self.all_ssim[kk] = calculate_ssim(gt_hs, est_hs)
 
 	def report(self, seqname, kk):
-		print('{}: Seq {}, frm {}, TIoU {:.3f}, PSNR {:.3f} dB, SSIM {:.3f}'.format(self.algname, seqname, kk, self.all_ious[kk], self.all_psnr[kk], self.all_ssim[kk]))
+		print('{}: Seq {}, frm {}, TIoU {:.3f}, PSNR {:.3f} dB, SSIM {:.3f}'.format(self.algname, seqname, kk, self.all_ious.get(kk, 0), self.all_psnr[kk], self.all_ssim[kk]))
+
+	def close(self):
+		return (
+			np.mean(list(self.all_ious.values())) if self.all_ious else 0,
+			np.mean(list(self.all_psnr.values())) if self.all_psnr else 0,
+			np.mean(list(self.all_ssim.values())) if self.all_ssim else 0
+		)
 
 #######################################################################################################################
 #######################################################################################################################
