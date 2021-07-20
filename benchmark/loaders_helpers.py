@@ -177,7 +177,7 @@ def crop_resize(Is, bbox, res):
         imr[:,:,:,kk] = cv2.resize(im, res, interpolation = cv2.INTER_CUBIC)
     if rev_axis:
         imr = imr[:,:,:,0]
-    return imr
+    return np.clip(imr, 0, 1)
 
 def crop_only(Is, bbox):
     if Is is None:
