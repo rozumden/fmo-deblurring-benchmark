@@ -12,7 +12,7 @@ def run_benchmark(args, method):
 	files = get_tbd_dataset(args.tbd_path)
 	evaluate_on(files, method, args)
 	
-def evaluate_on(files, method, args):
+def evaluate_on(files, method, args, callback=None):
 	dataset_name = os.path.split(os.path.split(os.path.split(files[0])[0])[0])[-1]
 	log_folder = os.path.join(args.visualization_path, dataset_name+'_eval/')
 	medn = 50
@@ -77,6 +77,9 @@ def evaluate_on(files, method, args):
 		av_score_tracker.next(gtp.seqname, means)
 		if args.save_visualization:
 			logger.close()
+
+		if callback:
+			callback(kkf, means)
 
 	return av_score_tracker.close()
 
