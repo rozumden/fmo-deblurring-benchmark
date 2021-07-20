@@ -46,6 +46,12 @@ def evaluate_on(files, method, args):
 				est_hs, est_traj = method(I,B,bbox_tight,gtp.nsplits,radius,obj_dim,gt_traj)
 			else:
 				est_hs, est_traj = method(I,B,bbox_tight,gtp.nsplits,radius,obj_dim)
+
+			if est_hs is None:
+				if args.verbose:
+					print(f"method() returned None, skipping frame {kk}")
+				continue
+
 			av_score_tracker.next_time(time.time() - start)
 
 			gt_hs_crop = crop_only(gt_hs, bbox_tight)

@@ -127,9 +127,9 @@ class AverageScoreTracker:
 		self.algname = algname
 
 	def next(self, seqname, sst):
-		self.av_ious[self.seqi] = np.mean(sst.all_ious)
-		self.av_psnr[self.seqi] = np.mean(sst.all_psnr)
-		self.av_ssim[self.seqi] = np.mean(sst.all_ssim)
+		self.av_ious[self.seqi] = np.mean(sst.all_ious.values())
+		self.av_psnr[self.seqi] = np.mean(sst.all_psnr.values())
+		self.av_ssim[self.seqi] = np.mean(sst.all_ssim.values())
 		print('{}: Finished seq {}, avg. TIoU {:.3f}, PSNR {:.3f} dB, SSIM {:.3f}'.format(self.algname,seqname, self.av_ious[self.seqi], self.av_psnr[self.seqi], self.av_ssim[self.seqi]))
 		self.seqi += 1
 
@@ -146,9 +146,9 @@ class AverageScoreTracker:
 
 class SequenceScoreTracker:
 	def __init__(self, nfrms, algname):
-		self.all_ious = np.zeros(nfrms)
-		self.all_psnr = np.zeros(nfrms)
-		self.all_ssim = np.zeros(nfrms)
+		self.all_ious = {}
+		self.all_psnr = {}
+		self.all_ssim = {}
 		self.algname = algname
 
 	def next_traj(self,kk,gt_traj,est_traj,minor_axis_length):
