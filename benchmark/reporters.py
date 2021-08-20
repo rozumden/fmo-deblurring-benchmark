@@ -2,7 +2,7 @@ import numpy as np
 import os, glob
 import scipy.io
 import cv2
-from benchmark.loaders_helpers import *
+from .loaders_helpers import *
 
 class GroundTruthProcessor:
 	def __init__(self, seqpath, kkf, medn):
@@ -126,10 +126,8 @@ class AverageScoreTracker:
 		self.seqi = 0
 		self.algname = algname
 
-	def next(self, seqname, sst):
-		self.av_ious[self.seqi] = np.mean(sst.all_ious)
-		self.av_psnr[self.seqi] = np.mean(sst.all_psnr)
-		self.av_ssim[self.seqi] = np.mean(sst.all_ssim)
+	def next(self, seqname, means):
+		self.av_ious[self.seqi], self.av_psnr[self.seqi], self.av_ssim[self.seqi] = means
 		print('{}: Finished seq {}, avg. TIoU {:.3f}, PSNR {:.3f} dB, SSIM {:.3f}'.format(self.algname,seqname, self.av_ious[self.seqi], self.av_psnr[self.seqi], self.av_ssim[self.seqi]))
 		self.seqi += 1
 
@@ -138,17 +136,19 @@ class AverageScoreTracker:
 
 	def close(self):
 		print('AVERAGES')
-		print('{}: TIoU {:.3f}, PSNR {:.3f} dB, SSIM {:.3f}'.format(self.algname, np.nanmean(self.av_ious), np.nanmean(self.av_psnr), np.nanmean(self.av_ssim)))
+		means = np.nanmean(self.av_ious), np.nanmean(self.av_psnr), np.nanmean(self.av_ssim)
+		print('{}: TIoU {:.3f}, PSNR {:.3f} dB, SSIM {:.3f}'.format(self.algname, *means))
 		print('{}: time {:.3f} seconds'.format(self.algname, np.nanmean(np.array(self.av_times))))
+		return means
 
 #######################################################################################################################
 #######################################################################################################################
 
 class SequenceScoreTracker:
 	def __init__(self, nfrms, algname):
-		self.all_ious = np.zeros(nfrms)
-		self.all_psnr = np.zeros(nfrms)
-		self.all_ssim = np.zeros(nfrms)
+		self.all_ious = {}
+		self.all_psnr = {}
+		self.all_ssim = {}
 		self.algname = algname
 
 	def next_traj(self,kk,gt_traj,est_traj,minor_axis_length):
@@ -163,7 +163,14 @@ class SequenceScoreTracker:
 		self.all_ssim[kk] = calculate_ssim(gt_hs, est_hs)
 
 	def report(self, seqname, kk):
-		print('{}: Seq {}, frm {}, TIoU {:.3f}, PSNR {:.3f} dB, SSIM {:.3f}'.format(self.algname, seqname, kk, self.all_ious[kk], self.all_psnr[kk], self.all_ssim[kk]))
+		print('{}: Seq {}, frm {}, TIoU {:.3f}, PSNR {:.3f} dB, SSIM {:.3f}'.format(self.algname, seqname, kk, self.all_ious.get(kk, 0), self.all_psnr[kk], self.all_ssim[kk]))
+
+	def close(self):
+		return (
+			np.mean(list(self.all_ious.values())) if self.all_ious else 0,
+			np.mean(list(self.all_psnr.values())) if self.all_psnr else 0,
+			np.mean(list(self.all_ssim.values())) if self.all_ssim else 0
+		)
 
 #######################################################################################################################
 #######################################################################################################################
