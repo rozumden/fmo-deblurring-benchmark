@@ -1,8 +1,8 @@
 import os
 import numpy as np
 import time
-from benchmark.loaders_helpers import *
-from benchmark.reporters import *
+from .loaders_helpers import *
+from .reporters import *
 
 def run_benchmark(args, method):
 	files = get_falling_dataset(args.falling_path)
@@ -12,7 +12,7 @@ def run_benchmark(args, method):
 	files = get_tbd_dataset(args.tbd_path)
 	evaluate_on(files, method, args)
 	
-def evaluate_on(files, method, args):
+def evaluate_on(files, method, args, callback=None):
 	dataset_name = os.path.split(os.path.split(os.path.split(files[0])[0])[0])[-1]
 	log_folder = os.path.join(args.visualization_path, dataset_name+'_eval/')
 	medn = 50
@@ -46,6 +46,12 @@ def evaluate_on(files, method, args):
 				est_hs, est_traj = method(I,B,bbox_tight,gtp.nsplits,radius,obj_dim,gt_traj)
 			else:
 				est_hs, est_traj = method(I,B,bbox_tight,gtp.nsplits,radius,obj_dim)
+
+			if est_hs is None:
+				if args.verbose:
+					print(f"method() returned None, skipping frame {kk}")
+				continue
+
 			av_score_tracker.next_time(time.time() - start)
 
 			gt_hs_crop = crop_only(gt_hs, bbox_tight)
@@ -67,9 +73,13 @@ def evaluate_on(files, method, args):
 			if args.verbose:
 				seq_score_tracker.report(gtp.seqname, kk)
 
-		av_score_tracker.next(gtp.seqname, seq_score_tracker)
+		means = seq_score_tracker.close()
+		av_score_tracker.next(gtp.seqname, means)
 		if args.save_visualization:
 			logger.close()
 
-	av_score_tracker.close()
+		if callback:
+			callback(kkf, means)
+
+	return av_score_tracker.close()
 
