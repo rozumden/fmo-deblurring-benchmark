@@ -6,6 +6,7 @@ from benchmark.loaders_helpers import *
 import argparse
 
 import sys
+# requires to download official DeFMO implementation from https://github.com/rozumden/DeFMO
 sys.path.insert(0, './DeFMO')
 from models.encoder import *
 from models.rendering import *
