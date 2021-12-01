@@ -6,6 +6,7 @@ from scipy import signal
 import cv2
 import glob
 import os
+import torch
 
 def get_tbd_dataset(folder):
 	files = np.array(glob.glob(os.path.join(folder, "imgs", '*_*')))
@@ -184,8 +185,17 @@ def crop_only(Is, bbox):
         return None
     return Is[bbox[0]:bbox[2], bbox[1]:bbox[3]]
 
+def renders2traj(renders,device):
+    masks = renders[:,:,-1]
+    sumx = torch.sum(masks,-2)
+    sumy = torch.sum(masks,-1)
+    cenx = torch.sum(sumy*torch.arange(1,sumy.shape[-1]+1)[None,None].float().to(device),-1) / torch.sum(sumy,-1)
+    ceny = torch.sum(sumx*torch.arange(1,sumx.shape[-1]+1)[None,None].float().to(device),-1) / torch.sum(sumx,-1)
+    est_traj = torch.cat((cenx.unsqueeze(-1),ceny.unsqueeze(-1)),-1)
+    return est_traj
+
 def rev_crop_resize_traj(inp, bbox, res):
-    inp = inp.copy()
+    inp = inp.clone()
     inp[0] *= ( (bbox[2]-bbox[0])/res[1])
     inp[1] *= ( (bbox[3]-bbox[1])/res[0])
     inp[0] += bbox[0]

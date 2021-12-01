@@ -9,7 +9,7 @@ class GroundTruthProcessor:
 		seqname = os.path.split(seqpath)[-1]
 		folder = os.path.split(os.path.split(seqpath)[0])[0]
 
-		roi_frames = []
+		roi_frames = None
 		if os.path.exists(os.path.join(folder,'roi_frames.txt')):
 			roi_frames = np.loadtxt(os.path.join(folder,'roi_frames.txt')).astype(int)
 		
@@ -21,17 +21,17 @@ class GroundTruthProcessor:
 		nfrms = len(glob.glob(os.path.join(seqpath,'*.png')))
 		start_ind = 0
 		end_ind = nfrms
-		if roi_frames != []:
+		if not roi_frames is None:
 			start_ind = roi_frames[kkf,0]
 			end_ind = roi_frames[kkf,1]
 			nfrms = end_ind - start_ind + 1
 		if not os.path.exists(os.path.join(seqpath,"{:08d}.png".format(0))):
 			start_ind += 1
 		mednused = np.min([medn, nfrms])
-		Vk = []
+		Vk = None
 		for kk in range(mednused):
 			Im = imread(os.path.join(seqpath,"{:08d}.png".format(start_ind+kk)))
-			if Vk == []:
+			if Vk is None:
 				Vk = np.zeros(Im.shape+(mednused,))
 			Vk[:,:,:,kk] = Im
 		pars = []
