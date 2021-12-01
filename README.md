@@ -36,7 +36,9 @@ To evaluate this method, please check out the [deblatting sub-module](https://gi
 
 #### DeFMO - current state-of-the-art
 
-To evaluate this method, please check out the [DeFMO sub-module](https://github.com/rozumden/DeFMO). Example is shown in `example_defmo.py`.
+The easiest way to evaluate DeFMO is using [Kornia](https://kornia.readthedocs.io/en/latest/feature.html) (`kornia.feature.DeFMO`). Example is shown in `example_defmo.py`.
+
+To evaluate this method using the original source coude, please download [DeFMO](https://github.com/rozumden/DeFMO). Example is shown in `example_defmo_source.py`.
 
 Scores
 ------------
